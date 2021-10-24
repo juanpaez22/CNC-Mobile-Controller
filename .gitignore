@@ -1,2 +1,5 @@
-secrets.py
+auth_vars.py
 __pycache__/
+dist/
+*.spec
+build/

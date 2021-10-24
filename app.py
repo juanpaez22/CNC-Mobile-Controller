@@ -3,7 +3,7 @@ import ctypes
 from ctypes import wintypes
 import time
 import time
-import secrets
+import auth_vars
 from pyautogui import press, typewrite, hotkey
 
 # ******************** SETUP ********************
@@ -20,7 +20,7 @@ key_bindings = {
     "SPEED_4": "4",
 }
 
-BLYNK_AUTH = secrets.BLYNK_AUTH
+BLYNK_AUTH = auth_vars.BLYNK_AUTH
 blynk = blynklib.Blynk(BLYNK_AUTH)
 
 WRITE_EVENT_PRINT_MSG = "[WRITE_VIRTUAL_PIN_EVENT] Pin: V{} Value: '{}'"
