@@ -4,7 +4,7 @@ from ctypes import wintypes
 import time
 import time
 import auth_vars
-from pyautogui import press, typewrite, hotkey
+from pyautogui import press, typewrite, hotkey, keyDown, keyUp
 
 # ******************** SETUP ********************
 key_bindings = {
