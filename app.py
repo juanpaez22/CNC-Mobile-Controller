@@ -31,63 +31,83 @@ CONNECT_PRINT_MSG = '[CONNECT_EVENT]'
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["SPEED_1"])
+        keyDown(key_bindings["SPEED_1"])
+    else:
+        keyUp(key_bindings["SPEED_1"])
 
 @blynk.handle_event('write V2')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["SPEED_2"])
+        keyDown(key_bindings["SPEED_2"])
+    else:
+        keyUp(key_bindings["SPEED_2"])
 
 @blynk.handle_event('write V3')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["SPEED_3"])
+        keyDown(key_bindings["SPEED_3"])
+    else:
+        keyUp(key_bindings["SPEED_3"])
 
 @blynk.handle_event('write V4')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["SPEED_4"])
+        keyDown(key_bindings["SPEED_4"])
+    else:
+        keyUp(key_bindings["SPEED_4"])
 
 # ******************** DIRECTION HANDLERS ********************
 @blynk.handle_event('write V5')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["ARROW_UP"])
+        keyDown(key_bindings["ARROW_UP"])
+    else:
+        keyUp(key_bindings["ARROW_UP"])
 
 @blynk.handle_event('write V6')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["ARROW_DOWN"])
+        keyDown(key_bindings["ARROW_DOWN"])
+    else:
+        keyUp(key_bindings["ARROW_DOWN"])
 
 @blynk.handle_event('write V7')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["ARROW_LEFT"])
+        keyDown(key_bindings["ARROW_LEFT"])
+    else:
+        keyUp(key_bindings["ARROW_LEFT"])
 
 @blynk.handle_event('write V8')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["ARROW_RIGHT"])
+        keyDown(key_bindings["ARROW_RIGHT"])
+    else:
+        keyUp(key_bindings["ARROW_RIGHT"])
 
 # ******************** Z AXIS HANDLERS ********************
 @blynk.handle_event('write V9')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["Z_DOWN"])
+        keyDown(key_bindings["Z_DOWN"])
+    else:
+        keyUp(key_bindings["Z_DOWN"])
 
 @blynk.handle_event('write V10')
 def handle_joystick_y(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     if value[0] == '1':
-        press(key_bindings["Z_UP"])
+        keyDown(key_bindings["Z_UP"])
+    else:
+        keyUp(key_bindings["Z_UP"])
     
 # ******************** CONNECTION HANDLER ********************
 @blynk.handle_event("connect")
