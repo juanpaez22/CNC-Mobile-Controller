@@ -7,13 +7,13 @@ import threading
 # ******************** SETUP ********************
 key_bindings = {
     1: "1",         # Pin V1 -> Speed 1
-    2: "2",         # Pin V2 ->Speed 2
-    3: "3",         # Pin V3 ->Speed 3
-    4: "4",         # Pin V4 ->Speed 4
-    5: "up",      # Pin V5 -> Arrow up
-    6: "down",     # Pin V6 -> Arrow down
-    7: "left",        # Pin V7 -> Arrow left
-    8: "right",      # Pin V8 -> Arrow right
+    2: "2",         # Pin V2 -> Speed 2
+    3: "3",         # Pin V3 -> Speed 3
+    4: "4",         # Pin V4 -> Speed 4
+    5: "up",        # Pin V5 -> Arrow up
+    6: "down",      # Pin V6 -> Arrow down
+    7: "left",      # Pin V7 -> Arrow left
+    8: "right",     # Pin V8 -> Arrow right
     9: "pagedown",  # Pin V9 -> Z down
     10: "pageup",   # Pin V10 -> Z up
 }
@@ -52,7 +52,7 @@ def press_thread():
 # ******************** VIRTUAL PIN HANDLERS ********************
 @blynk.handle_event('write V1')
 def handle_pin(pin, value):
-    handle_hold_event(pin, value)
+    handle_press_event(pin, value)
 
 @blynk.handle_event('write V2')
 def handle_pin(pin, value):
@@ -64,7 +64,7 @@ def handle_pin(pin, value):
 
 @blynk.handle_event('write V4')
 def handle_pin(pin, value):
-    handle_press_event(pin, value)
+    handle_hold_event(pin, value)
 
 @blynk.handle_event('write V5')
 def handle_pin(pin, value):
@@ -104,8 +104,6 @@ def main():
     x.start()
     while True:
         blynk.run()
-        #if key_to_press is not None:
-            #press(key_to_press)
 
 if __name__ == "__main__":
     main()
