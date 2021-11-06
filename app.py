@@ -28,11 +28,8 @@ key_to_press = None
 # ******************** CONTROL HELPERS ********************
 def handle_press_event(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
-    global key_to_press
     if value[0] == '1':
-        key_to_press = key_bindings[pin]
-    else:
-        key_to_press = None
+        press(key_bindings[pin])
 
 def handle_hold_event(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
@@ -64,7 +61,7 @@ def handle_pin(pin, value):
 
 @blynk.handle_event('write V4')
 def handle_pin(pin, value):
-    handle_hold_event(pin, value)
+    handle_press_event(pin, value)
 
 @blynk.handle_event('write V5')
 def handle_pin(pin, value):
@@ -100,8 +97,8 @@ def connect_handler():
 
 # ******************** MAIN LOOP ********************
 def main():
-    x = threading.Thread(target=press_thread, daemon=True)
-    x.start()
+    # x = threading.Thread(target=press_thread, daemon=True)
+    # x.start()
     while True:
         blynk.run()
 
